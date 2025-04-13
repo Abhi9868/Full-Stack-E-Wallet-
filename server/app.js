@@ -14,6 +14,7 @@ connectDB();
 
 const allowedOrigins = [
     'http://localhost:5173',
+    "https://full-stack-e-wallet-lgur.vercel.app",
     'https://b85g2fl7-5174.inc1.devtunnels.ms'
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
