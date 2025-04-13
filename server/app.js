@@ -14,6 +14,8 @@ connectDB();
 
 const allowedOrigins = [
     'http://localhost:5173',
+    'http://localhost:3000',
+    'http://localhost',
     "https://full-stack-e-wallet-lgur.vercel.app",
     'https://b85g2fl7-5174.inc1.devtunnels.ms'
 ];
