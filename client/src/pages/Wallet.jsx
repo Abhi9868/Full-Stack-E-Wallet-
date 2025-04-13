@@ -83,7 +83,8 @@ const Wallet = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.post('/wallet/add', { amount: parseFloat(addAmount) });
+            const res = await axios.post('/wallet/add', { amount: parseFloat(addAmount) });
+            console.log(res)
             await fetchBalance();
             await fetchTransactions();
             toast.success('Money added successfully!');
