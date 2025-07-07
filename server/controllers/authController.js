@@ -2,11 +2,15 @@ import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
 import Wallet from '../models/walletModel.js';
 
-const createToken = (userId) => {
-    return jwt.sign({ userId }, process.env.JWT_SECRET, {
+(userId) => {
+    const secretKey = process.env.JWT_SECRET;
+    if (!secretKey) {
+        throw new Error('JWT secret key is not defined');
+    }
+    return jwt.sign({ userId }, secretKey, {
         expiresIn: '7d',
     });
-};
+}
 
 export const register = async (req, res) => {
     const { email, phone, password } = req.body;
